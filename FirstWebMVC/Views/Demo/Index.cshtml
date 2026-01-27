@@ -1,5 +1,12 @@
 @{
     ViewData["Title"] = "Demo Page";
 }
-
-<h1>@ViewData["Message"]</h1>
+<form asp-action="Index" method="post">
+    <label for="">Full Name:</label>
+    <input type="text" name="FullName"/>
+    <button type="submit" >Send Data</button>
+</form>
+<h1>@ViewBag.Message</h1>
+@if (ViewBag.Name != null) {
+    <p>Kết quả nhận được: <Strong>@ViewBag.Name</Strong></p>
+}

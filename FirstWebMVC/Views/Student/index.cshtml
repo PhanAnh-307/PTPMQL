@@ -1,0 +1,14 @@
+@using Microsoft.Extensions.Logging.Abstractions
+<h2>xin chao student</h2>
+<form asp-action="Index" type="post">
+    <label for="">Ho ten</label>
+    <input type="text" name="FullName" placeholder="Nhap vao ten sinh vien"/>
+    <label for="">Ma sinh vien</label>
+    <input type="text" name="StudentCode" placeholder="Nhap vao ma sinh vien"/>
+    <button type="submit">Submit</button>
+</form>
+
+@if (ViewBag.name != null && ViewBag.code != null)
+{
+    <p>Tên sinh viên và mã sinh vien là: @ViewBag.name, @ViewBag.code</p>
+}
