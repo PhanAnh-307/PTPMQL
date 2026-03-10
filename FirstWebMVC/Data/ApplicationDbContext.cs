@@ -11,7 +11,6 @@ namespace FirstWebMVC.Data
         }
 
         // Bước 6: Khai báo DbSet (Coi như đây là khai báo các bảng sẽ có trong DB)
-        public DbSet<Student> Students { get; set; } 
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Student> Students {get; set;}
     }
 }

@@ -1,17 +1,24 @@
-namespace FirstWebMVC.Controllers
-    
-{
-    using FirstWebMVC.Models.Entities;
-    using Microsoft.AspNetCore.Mvc;
+using FirstWebMVC.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.Design;
 
+namespace FirstWebMVC.Controllers
+{
     public class StudentController : Controller
     {
-        [HttpPost]
-        public IActionResult Index(Student std)
+       private readonly ApplicationDbContext _context;
+
+       public StudentController(ApplicationDbContext context)
         {
-            ViewBag.name = std.FullName;
-            ViewBag.code = std.StudentCode;
-            return View();
+            _context = context;
+        }
+    
+        public async Task<IActionResult> Index()
+        {
+            var model = await _context.Students.ToListAsync();
+
+            return View(model);
         }
     }
 }

@@ -5,22 +5,22 @@
 namespace FirstWebMVC.Migrations
 {
     /// <inheritdoc />
-    public partial class Create_Student_Table_And_Product : Migration
+    public partial class Create_Student_table : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "Students",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                    StudentCode = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ProductName = table.Column<int>(type: "INTEGER", nullable: false)
+                    FullName = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Students", x => x.StudentCode);
                 });
         }
 
@@ -28,7 +28,7 @@ namespace FirstWebMVC.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Students");
         }
     }
 }
