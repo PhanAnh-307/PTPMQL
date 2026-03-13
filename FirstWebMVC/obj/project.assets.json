@@ -6422,19 +6422,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\lotus\\.nuget\\packages\\": {}
+    "C:\\Users\\PhanAnh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\My projects\\.NET_core\\FirstWebMVC\\FirstWebMVC.csproj",
+      "projectUniqueName": "E:\\Myproject\\School works\\PTPMQL\\FirstWebMVC\\FirstWebMVC.csproj",
       "projectName": "FirstWebMVC",
-      "projectPath": "D:\\My projects\\.NET_core\\FirstWebMVC\\FirstWebMVC.csproj",
-      "packagesPath": "C:\\Users\\lotus\\.nuget\\packages\\",
-      "outputPath": "D:\\My projects\\.NET_core\\FirstWebMVC\\obj\\",
+      "projectPath": "E:\\Myproject\\School works\\PTPMQL\\FirstWebMVC\\FirstWebMVC.csproj",
+      "packagesPath": "C:\\Users\\PhanAnh\\.nuget\\packages\\",
+      "outputPath": "E:\\Myproject\\School works\\PTPMQL\\FirstWebMVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lotus\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\PhanAnh\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"

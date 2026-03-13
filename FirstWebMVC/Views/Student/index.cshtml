@@ -19,13 +19,13 @@
         </tr>
     </thread>
     <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td></td>
-                <td></td>
+        @foreach (var sinh_vien in Model) {
+            <tr id="row-@sinh_vien.StudentCode">
+                <td>@sinh_vien.StudentCode</td>
+                <td>@sinh_vien.FullName</td>
                 <td>
-                    <a asp-action= "Edit" asp-route-id="@item.StudentCode" class="btn btn-sm btn-warning">Sửa</a>
-                    <a asp-action= "Delete" asp-route-id="@item.StudentCode" class="btn btn-sm btn-danger">Xóa</a>
+                    <a asp-action= "Edit" asp-route-id="@sinh_vien.StudentCode" class="btn btn-sm btn-warning">Sửa</a>
+                    <a asp-action="Delete" asp-route-id="@sinh_vien.StudentCode" class="btn btn-sm btn-danger" onclick="return confirm('Xác nhận muốn xóa')">Xóa</a>
                 </td>
             </tr>
         }

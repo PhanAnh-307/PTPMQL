@@ -1,0 +1,14 @@
+@model FirstWebMVC.Models.Entities.Student
+
+<h1>Chỉnh sửa thông tin sinh viên</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="StudentCode">
+
+    <div class="form-group mb-3">
+        <label>Họ và tên</label>
+        <input asp-for="FullName" class="form-control">
+    </div>
+    <button type="submit" class="btn-primary">Cập nhập</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

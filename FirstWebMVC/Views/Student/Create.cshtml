@@ -1,0 +1,12 @@
+@model FirstWebMVC.Models.Entities.Student
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Nhập họ và tên</label>
+        <input asp-for="FullName" class="form-control" />
+        <label>Nhập mã sinh viên</label>
+        <input asp-for="StudentCode" class="form-control"/>
+    </div>
+
+    <button type="submit">Lưu</button>
+</form>
