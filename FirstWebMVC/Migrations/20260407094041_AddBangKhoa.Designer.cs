@@ -2,6 +2,7 @@
 using FirstWebMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FirstWebMVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260407094041_AddBangKhoa")]
+    partial class AddBangKhoa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");
@@ -28,28 +31,6 @@ namespace FirstWebMVC.Migrations
                     b.HasKey("MaKhoa");
 
                     b.ToTable("Khoas");
-
-                    b.HasData(
-                        new
-                        {
-                            MaKhoa = "CNTT",
-                            TenKhoa = "Công nghệ thông tin"
-                        },
-                        new
-                        {
-                            MaKhoa = "KETOAN",
-                            TenKhoa = "Kế toán"
-                        },
-                        new
-                        {
-                            MaKhoa = "QTKD",
-                            TenKhoa = "Quản trị kinh doanh"
-                        },
-                        new
-                        {
-                            MaKhoa = "CD",
-                            TenKhoa = "Cơ điện"
-                        });
                 });
 
             modelBuilder.Entity("FirstWebMVC.Models.Entities.Student", b =>

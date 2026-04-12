@@ -9,6 +9,13 @@
         <label>Họ và tên</label>
         <input asp-for="FullName" class="form-control">
     </div>
+    <label>Chọn khoa của bạn</label>
+    <select asp-for="MaKhoa" class="form-control">
+        @foreach (var khoa in ViewBag.DanhSachKhoa)
+        {
+            <option value="@khoa.MaKhoa">@khoa.TenKhoa</option>
+        }
+    </select>
     <button type="submit" class="btn-primary">Cập nhập</button>
     <a asp-action="Index" class="btn btn-secondary">Hủy</a>
 </form>

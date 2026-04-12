@@ -1,5 +1,6 @@
 using FirstWebMVC.Data;
 using FirstWebMVC.Models.Entities;
+using FirstWebMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
@@ -19,12 +20,20 @@ namespace FirstWebMVC.Controllers
     
         public async Task<IActionResult> Index()
         {
-            var model = await _context.Students.ToListAsync();
+            var model = await _context.Students
+            .Select(s => new StudentViewModel
+            {
+                StudentCode  = s.StudentCode,
+                FullName = s.FullName,
+                MaKhoa = s.MaKhoa,
+                TenKhoa = s.ThongTinKhoa != null ? s.ThongTinKhoa.TenKhoa : "Không có khoa"
+            }).ToListAsync();
 
             return View(model);
         }
         public IActionResult Create()
         {
+            ViewBag.DanhSachKhoa = _context.Khoas.ToList();
             return View();
         }
 
@@ -39,7 +48,7 @@ namespace FirstWebMVC.Controllers
             }
             return View(du_lieu_tu_form);
         }
-    public async Task<IActionResult> Edit(int? id)
+    public async Task<IActionResult> Edit(string? id)
     {
         if (id == null) return NotFound();
 
@@ -48,6 +57,7 @@ namespace FirstWebMVC.Controllers
 
         if (sinh_vien_can_sua == null) return NotFound();
 
+        ViewBag.DanhSachKhoa = _context.Khoas.ToList();
 
         return View(sinh_vien_can_sua);
     }

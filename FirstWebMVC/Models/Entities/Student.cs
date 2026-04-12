@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FirstWebMVC.Models.Entities
 {
@@ -14,5 +15,9 @@ namespace FirstWebMVC.Models.Entities
         [Required(ErrorMessage = "Vui lòng nhập tên đầy đủ!")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Tên phải nhỏ hơn 50 ký tự và lớn hơn 3 ký tự")]
         public string? FullName { get; set; }
+
+        public string? MaKhoa { get; set; }
+        [ForeignKey("MaKhoa")]
+        public Faculty? ThongTinKhoa { get; set; }
     }
 }

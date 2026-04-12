@@ -6,6 +6,14 @@
         <input asp-for="FullName" class="form-control" />
         <label>Nhập mã sinh viên</label>
         <input asp-for="StudentCode" class="form-control"/>
+        <label>Chọn khoa</label>
+        <select asp-for="MaKhoa" class="form-control">
+            <option value="">-- Chọn khoa --</option>
+            @foreach (var khoa in ViewBag.DanhSachKhoa)
+            {
+                <option value="@khoa.MaKhoa">@khoa.TenKhoa</option>
+            }
+        </select>
     </div>
 
     <button type="submit">Lưu</button>

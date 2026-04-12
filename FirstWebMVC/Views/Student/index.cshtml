@@ -1,4 +1,4 @@
-@model IEnumerable<FirstWebMVC.Models.Entities.Student>
+@model IEnumerable<FirstWebMVC.Models.StudentViewModel>
 
 @{
     ViewData["Title"] = "Danh sách sinh viên";
@@ -15,6 +15,7 @@
         <tr>
             <th>Mã sinh viên</th>
             <th>Họ và tên</th>
+            <th>Tên khoa</th>
             <th>Thao tác</th>
         </tr>
     </thread>
@@ -23,6 +24,7 @@
             <tr id="row-@sinh_vien.StudentCode">
                 <td>@sinh_vien.StudentCode</td>
                 <td>@sinh_vien.FullName</td>
+                <td>@sinh_vien.TenKhoa</td>
                 <td>
                     <a asp-action= "Edit" asp-route-id="@sinh_vien.StudentCode" class="btn btn-sm btn-warning">Sửa</a>
                     <a asp-action="Delete" asp-route-id="@sinh_vien.StudentCode" class="btn btn-sm btn-danger" onclick="return confirm('Xác nhận muốn xóa')">Xóa</a>
