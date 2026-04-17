@@ -1,0 +1,33 @@
+@model FirstWebMVC.Models.Entities.Customer
+
+<h2>lich su mua hang</h2>
+
+<table class = "table table-bordered text-center">
+    <thead>
+        <tr>
+            <th>Mã đơn hàng</th>
+            <th>Ngày Mua</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá tiền</th>
+            <th>Số lượng</th>
+            <th>Thành tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var don_hang in Model.Orders)
+        {
+            foreach (var chi_tiet in don_hang.OrderDetail)
+            {
+                <tr>
+                    <td>@don_hang.OrderId</td>
+                    <td>@don_hang.OrderDate</td>
+                    <td>@chi_tiet.Product.ProductName</td>
+                    <td>@chi_tiet.Product.ProductPrice</td>
+                    <td>@chi_tiet.Quantity</td>
+                    <td>@(chi_tiet.Quantity * @chi_tiet.Product.ProductPrice) VNĐ</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+<a href="/Customer" class = "btn btn - secondary">Quay lại<a

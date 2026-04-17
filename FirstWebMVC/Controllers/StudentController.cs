@@ -40,7 +40,7 @@ namespace FirstWebMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Student du_lieu_tu_form)
         {
-            if (ModelState.IsValid)
+            if(ModelState.IsValid)
             {
                 _context.Students.Add(du_lieu_tu_form);
                 await _context.SaveChangesAsync();

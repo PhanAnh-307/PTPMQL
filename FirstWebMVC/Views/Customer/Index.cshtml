@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FirstWebMVC.Models.Entities.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Danh sach</h1>
+
+<p>
+    <a asp-action="Create">Them moi</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CustomerId">Sua</a> |
+                <a asp-action="Details" asp-route-id="@item.CustomerId">Chi tiet</a> |
+                <a asp-action="Delete" asp-route-id="@item.CustomerId">Xoa</a> |
+                <a asp-action="CustomerOrders" asp-route-id="@item.CustomerId">Lich su mua hang</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
