@@ -1,0 +1,21 @@
+<div>
+    <form action="" method="post">
+        <div>
+            <label>Nhập Họ tên</label>
+            <input type="text" name="FullName">
+        </div>
+        <div>
+            <label>Nhập Địa chỉ</label>
+            <input type="text" name="Address">
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <hr/>
+    @if (ViewData["Data"] != null)
+    {
+        <h1>@ViewData["Data"]</h1>
+    }
+</div>
