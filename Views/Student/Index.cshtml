@@ -9,13 +9,26 @@
             <input type="text" name="Address">
         </div>
         <div>
-            <button type="submit">Submit</button>
+            <label>Ngày sinh</label>
+            <input type="date" name="Birthday">
+        </div>
+        <div>
+            <label>Khoa</label>
+            <select name= "Major">
+                @foreach (var chuyenganh in ViewBag.Majors)
+                {
+                    <option value = "@chuyenganh">@chuyenganh</option>
+                }
+            </select>
+            <div class="mt-3">
+                <button type="submit">Submit</button>
+            </div>
         </div>
     </form>
 
     <hr/>
-    @if (ViewData["Data"] != null)
+    @if (TempData["Data"] != null)
     {
-        <h1>@ViewData["Data"]</h1>
+        <h1>@TempData["Data"]</h1>
     }
 </div>
